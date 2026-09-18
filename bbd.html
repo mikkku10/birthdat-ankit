@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Happy Birthday | Mokash Ke Daddy ❤️</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Outfit', sans-serif;
+      background:
+        radial-gradient(circle at top left, #ff758f 0%, transparent 30%),
+        radial-gradient(circle at bottom right, #c9184a 0%, transparent 30%),
+        linear-gradient(135deg, #2b0010, #590d22, #800f2f);
+      color: white;
+      overflow-x: hidden;
+    }
+
+
+
+/* =========================
+   FINAL MEMORY SECTION
+========================== */
+
+.final-memory {
+  position: relative;
+  z-index: 3;
+
+  width: min(1000px, 94%);
+  margin: 80px auto 100px;
+
+  padding: 70px 25px;
+
+  text-align: center;
+
+  border-radius: 40px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.13),
+      rgba(255, 77, 109, 0.10)
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.45),
+    inset 0 0 40px rgba(255, 255, 255, 0.04);
+
+  overflow: hidden;
+}
+
+
+/* Soft background glow */
+
+.memory-glow {
+  position: absolute;
+
+  width: 450px;
+  height: 450px;
+
+  left: 50%;
+  top: 45%;
+
+  transform: translate(-50%, -50%);
+
+  background: radial-gradient(
+    circle,
+    rgba(255, 77, 109, 0.30),
+    transparent 70%
+  );
+
+  filter: blur(25px);
+
+  pointer-events: none;
+
+  animation: memoryGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes memoryGlow {
+
+  from {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+
+}
+
+
+/* Heading */
+
+.memory-heading {
+  position: relative;
+  z-index: 2;
+
+  margin-bottom: 35px;
+}
+
+.memory-heading span {
+  font-family: 'Great Vibes', cursive;
+
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+
+  color: #ffb3c1;
+
+  text-shadow:
+    0 0 15px rgba(255, 117, 143, 0.7);
+}
+
+.memory-heading h2 {
+  margin-top: 5px;
+
+  font-family: 'Playfair Display', serif;
+
+  font-size: clamp(2rem, 5vw, 3.5rem);
+
+  color: white;
+}
+
+.memory-heading p {
+  max-width: 650px;
+
+  margin: 15px auto 0;
+
+  color: #ffe5eb;
+
+  font-size: 1.05rem;
+
+  line-height: 1.8;
+}
+
+
+/* Image area */
+
+.memory-image-wrapper {
+  position: relative;
+
+  width: min(650px, 92%);
+
+  margin: auto;
+
+  z-index: 2;
+}
+
+@media (max-width: 600px) {
+
+  .memory-image-frame {
+    padding: 6px;
+    border-radius: 22px;
+  }
+
+  .memory-image {
+    width: 100%;
+    height: auto;
+    max-height: none;
+
+    object-fit: contain;
+    border-radius: 17px;
+  }
+
+}
+
+
+/* Main frame */
+
+.memory-image-frame {
+
+  position: relative;
+
+  padding: 10px;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff4d6d,
+      #ffb3c1,
+      #c9184a,
+      #ff758f
+    );
+
+  background-size: 300% 300%;
+
+  animation:
+    borderGradient 6s ease infinite,
+    imageFloat 5s ease-in-out infinite;
+
+  box-shadow:
+    0 20px 70px rgba(255, 77, 109, 0.45),
+    0 0 40px rgba(255, 117, 143, 0.25);
+}
+
+@keyframes borderGradient {
+
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+
+}
+
+@keyframes imageFloat {
+
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+
+}
+
+
+/* Image */
+.memory-image {
+  position: relative;
+  display: block;
+
+  width: 100%;
+  height: auto;
+  max-height: 700px;
+
+  object-fit: contain;
+  object-position: center;
+
+  border-radius: 22px;
+  border: 2px solid rgba(255,255,255,0.18);
+
+  background: rgba(20, 0, 6, 0.5);
+
+  box-shadow:
+    inset 0 0 30px rgba(0,0,0,0.25);
+
+  transition:
+    transform 0.6s ease,
+    filter 0.6s ease;
+}
+
+
+/* Hover effect */
+
+.memory-image-frame:hover .memory-image {
+
+  transform: scale(1.025);
+
+  filter:
+    brightness(1.06)
+    saturate(1.08);
+}
+
+
+/* Moving shine */
+
+.memory-shine {
+
+  position: absolute;
+
+  z-index: 3;
+
+  top: 0;
+  left: -120%;
+
+  width: 60%;
+  height: 100%;
+
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255,255,255,0.35),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  pointer-events: none;
+
+  animation: imageShine 5s infinite;
+}
+
+@keyframes imageShine {
+
+  0% {
+    left: -120%;
+  }
+
+  45%, 100% {
+    left: 150%;
+  }
+
+}
+
+
+/* Floating hearts around image */
+
+.memory-heart {
+
+  position: absolute;
+
+  z-index: 5;
+
+  font-size: 30px;
+
+  filter:
+    drop-shadow(0 5px 12px rgba(255, 77, 109, 0.5));
+
+  animation:
+    memoryHeartFloat 3s ease-in-out infinite;
+}
+
+.heart-1 {
+  left: -35px;
+  top: 10%;
+  animation-delay: 0s;
+}
+
+.heart-2 {
+  right: -35px;
+  top: 20%;
+  animation-delay: 0.8s;
+}
+
+.heart-3 {
+  left: -25px;
+  bottom: 15%;
+  animation-delay: 1.5s;
+}
+
+.heart-4 {
+  right: -25px;
+  bottom: 8%;
+  animation-delay: 2.2s;
+}
+
+@keyframes memoryHeartFloat {
+
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-15px) scale(1.18);
+  }
+
+}
+
+
+/* Final message */
+
+.final-love {
+
+  position: relative;
+  z-index: 2;
+
+  margin-top: 40px;
+
+  font-family: 'Great Vibes', cursive;
+
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+
+  line-height: 1.5;
+
+  color: #ffb3c1;
+
+  text-shadow:
+    0 5px 20px rgba(255, 77, 109, 0.5);
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .final-memory {
+    padding: 50px 15px;
+    margin-top: 50px;
+    border-radius: 30px;
+  }
+
+  .memory-image-wrapper {
+    width: 95%;
+  }
+
+  .memory-image-frame {
+    padding: 6px;
+    border-radius: 22px;
+  }
+
+  .memory-image {
+    border-radius: 17px;
+  }
+
+  .memory-heart {
+    font-size: 22px;
+  }
+
+  .heart-1 {
+    left: -15px;
+  }
+
+  .heart-2 {
+    right: -15px;
+  }
+
+  .heart-3 {
+    left: -12px;
+  }
+
+  .heart-4 {
+    right: -12px;
+  }
+
+  .memory-heading p {
+    font-size: 0.95rem;
+  }
+
+}
+
+
+
+
+
+
+
+
+    /* =========================
+       BACKGROUND
+    ========================= */
+
+    .celebration-container {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .balloons-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      border-radius: 50% 50% 45% 45%;
+      opacity: 0.75;
+      filter: blur(0.2px);
+    }
+
+    .balloon::after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 100px;
+      background: rgba(255,255,255,0.5);
+      left: 50%;
+      top: 98%;
+    }
+
+    /* =========================
+       MAIN CARD
+    ========================= */
+
+    .content-wrapper {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 60px 20px 40px;
+    }
+
+    .glass-card {
+      width: min(1100px, 95%);
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border-radius: 35px;
+      overflow: hidden;
+
+      box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.35),
+        inset 0 0 30px rgba(255,255,255,0.04);
+    }
+
+    /* =========================
+       IMAGE
+    ========================= */
+
+    .photo-section {
+      min-height: 550px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 25px;
+    }
+
+    .image-reveal {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+    }
+
+    .main-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .image-shimmer {
+      position: absolute;
+      inset: 0;
+
+      background: linear-gradient(
+        120deg,
+        transparent 30%,
+        rgba(255,255,255,0.25),
+        transparent 70%
+      );
+
+      transform: translateX(-100%);
+      animation: shimmer 4s infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        transform: translateX(-100%);
+      }
+      50%,100% {
+        transform: translateX(100%);
+      }
+    }
+
+    /* =========================
+       MESSAGE
+    ========================= */
+
+    .message-section {
+      padding: 60px 45px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .celebrate-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1.05;
+      margin-bottom: 30px;
+    }
+
+    .celebrate-title span {
+      font-family: 'Great Vibes', cursive;
+      color: #ffb3c1;
+      text-shadow: 0 5px 20px rgba(255, 117, 143, 0.5);
+    }
+
+    .message-content {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #ffe5eb;
+    }
+
+    .reveal-p {
+      margin-bottom: 15px;
+    }
+
+    /* =========================
+       BUTTON
+    ========================= */
+
+    .action-section {
+      margin-top: 25px;
+    }
+
+    .add-btn {
+      border: none;
+      outline: none;
+      cursor: pointer;
+
+      padding: 14px 24px;
+      border-radius: 50px;
+
+      color: white;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+
+      background: linear-gradient(
+        135deg,
+        #ff4d6d,
+        #c9184a
+      );
+
+      box-shadow: 0 10px 30px rgba(255, 77, 109, 0.35);
+
+      transition: 0.3s ease;
+    }
+
+    .add-btn:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 15px 35px rgba(255, 77, 109, 0.55);
+    }
+
+    .add-btn:active {
+      transform: scale(0.96);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .footer-info {
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .credit {
+      color: #ffdce4;
+      font-size: 0.9rem;
+    }
+
+    .author {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.4rem;
+      color: #ffb3c1;
+    }
+
+    .heart-pulse {
+      color: #ff4d6d;
+      animation: heartbeat 1.2s infinite;
+      display: inline-block;
+    }
+
+    @keyframes heartbeat {
+      0%,100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.3);
+      }
+    }
+
+    .back-home {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 15px;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .back-home:hover {
+      background: rgba(255,255,255,0.15);
+    }
+
+    /* =========================
+       CAKE SECTION
+    ========================= */
+
+    .cake-section {
+      position: relative;
+      z-index: 3;
+
+      width: min(950px, 94%);
+      margin: 70px auto 80px;
+
+      text-align: center;
+
+      padding: 45px 25px;
+
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+
+      border-radius: 35px;
+
+      box-shadow:
+        0 25px 70px rgba(0,0,0,0.35);
+    }
+
+    .cake-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      margin-bottom: 12px;
+    }
+
+    .cake-title span {
+      display: block;
+
+      font-family: 'Great Vibes', cursive;
+      color: #ffb3c1;
+
+      font-size: clamp(2.5rem, 6vw, 4rem);
+
+      text-shadow:
+        0 5px 25px rgba(255, 77, 109, 0.6);
+    }
+
+    .cake-subtitle {
+      color: #ffdce4;
+      margin-bottom: 30px;
+      font-size: 1.05rem;
+    }
+
+    .cake-video-wrapper {
+      position: relative;
+      max-width: 800px;
+      margin: auto;
+
+      padding: 8px;
+
+      border-radius: 28px;
+
+      background: linear-gradient(
+        135deg,
+        #ff4d6d,
+        #ffb3c1,
+        #c9184a
+      );
+
+      box-shadow:
+        0 20px 60px rgba(255, 77, 109, 0.35);
+    }
+
+    .cake-video {
+      display: block;
+      width: 100%;
+      max-height: 550px;
+
+      border-radius: 21px;
+
+      background: #140006;
+      object-fit: contain;
+    }
+
+    .cake-name {
+      position: absolute;
+
+      left: 50%;
+      bottom: 30px;
+
+      transform: translateX(-50%);
+
+      width: 85%;
+
+      padding: 12px 20px;
+
+      border-radius: 50px;
+
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+
+      color: white;
+
+      background: rgba(60, 0, 20, 0.45);
+
+      backdrop-filter: blur(8px);
+
+      border: 1px solid rgba(255,255,255,0.25);
+
+      text-shadow:
+        0 3px 15px #ff1744,
+        0 0 20px rgba(255,255,255,0.4);
+
+      animation: nameGlow 2s infinite alternate;
+    }
+
+    @keyframes nameGlow {
+      from {
+        box-shadow: 0 0 10px rgba(255,117,143,0.2);
+      }
+
+      to {
+        box-shadow:
+          0 0 30px rgba(255,117,143,0.5),
+          0 0 60px rgba(255,77,109,0.2);
+      }
+    }
+
+    .cake-message {
+      margin-top: 28px;
+
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      line-height: 1.8;
+
+      color: #ffe5eb;
+    }
+
+    .love-line {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2rem;
+      color: #ffb3c1;
+    }
+
+    /* =========================
+       FLOATING HEARTS
+    ========================= */
+
+    .heart {
+      position: fixed;
+      bottom: -50px;
+      z-index: 1;
+
+      color: #ff758f;
+      font-size: 25px;
+
+      pointer-events: none;
+
+      animation: floatHeart linear forwards;
+    }
+
+    @keyframes floatHeart {
+      0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-110vh) translateX(var(--move)) scale(1.3);
+        opacity: 0;
+      }
+    }
+
+    /* =========================
+       MUSIC
+    ========================= */
+
+    .music-controls {
+      position: fixed;
+      right: 25px;
+      bottom: 25px;
+      z-index: 100;
+    }
+
+    .fab-music {
+      width: 60px;
+      height: 60px;
+
+      border: none;
+      border-radius: 50%;
+
+      cursor: pointer;
+
+      font-size: 1.5rem;
+
+      color: white;
+
+      background: linear-gradient(
+        135deg,
+        #ff4d6d,
+        #c9184a
+      );
+
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.35);
+    }
+
+    .fab-music.playing {
+      animation: musicPulse 1s infinite;
+    }
+
+    @keyframes musicPulse {
+      0%,100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.12);
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      .content-wrapper {
+        padding-top: 25px;
+      }
+
+      .glass-card {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-section {
+        min-height: auto;
+        padding: 15px;
+      }
+
+      .image-reveal {
+        height: 400px;
+      }
+
+      .message-section {
+        padding: 40px 25px;
+      }
+
+      .celebrate-title {
+        font-size: 3rem;
+      }
+
+      .cake-section {
+        padding: 35px 15px;
+        margin-top: 40px;
+      }
+
+      .cake-name {
+        bottom: 20px;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .image-reveal {
+        height: 330px;
+      }
+
+      .celebrate-title {
+        font-size: 2.5rem;
+      }
+
+      .message-content {
+        font-size: 1rem;
+      }
+
+      .cake-video-wrapper {
+        padding: 5px;
+      }
+
+      .cake-name {
+        width: 90%;
+        padding: 8px 12px;
+        font-size: 1.7rem;
+        bottom: 15px;
+      }
+
+      .footer-info {
+        justify-content: center;
+      }
+
+      .fab-music {
+        width: 52px;
+        height: 52px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="celebration-container">
+
+    <!-- =========================
+         BALLOONS
+    ========================== -->
+
+    <div class="balloons-bg" id="balloons-container"></div>
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="content-wrapper">
+
+      <div class="glass-card">
+
+        <!-- IMAGE -->
+        <div class="photo-section">
+
+          <div class="image-reveal">
+
+            <!-- Apni photo yahan rakho -->
+            <img
+              src="./img/image.png"
+              alt="Birthday Celebration"
+              class="main-image"
+            >
+
+            <div class="image-shimmer"></div>
+
+          </div>
+
+        </div>
+
+        <!-- MESSAGE -->
+        <div class="message-section">
+
+          <h1 class="celebrate-title">
+            Happy Birthday,
+            <br>
+            <span>My Love ❤️</span>
+          </h1>
+
+          <div class="message-content">
+
+            <p class="reveal-p">
+              Having you in my life makes me feel like the luckiest person alive. ❤️
+            </p>
+
+            <p class="reveal-p">
+              Your smile, your love, your presence —
+              they complete my world. 🥰
+            </p>
+
+            <p class="reveal-p">
+              On your special day, I wish all your dreams come true.
+              May your life always be filled with love and happiness. 💖
+            </p>
+
+          </div>
+
+          <div class="action-section">
+
+            <button id="add-wish" class="add-btn">
+              <span>✨</span>
+              Add a Special Wish
+            </button>
+
+          </div>
+
+          <div class="footer-info">
+
+            <div class="credit">
+              Made with
+              <span class="heart-pulse">❤</span>
+              by
+              <span class="author">
+                your laddo
+              </span>
+            </div>
+
+            <a href="index.html" class="back-home">
+              Back to start
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+
+    <!-- =========================
+         CAKE CUTTING SECTION
+    ========================== -->
+
+    <section class="cake-section">
+
+      <h2 class="cake-title">
+        🎂 A Special Cake For
+        <span>Mokash Ke Daddy ❤️</span>
+      </h2>
+
+      <p class="cake-subtitle">
+        This special moment is only for you, my love... 💕
+      </p>
+
+      <div class="cake-video-wrapper">
+
+        <!--
+          IMPORTANT:
+          Apni cake cutting video ka naam
+          cake-cutting.mp4 rakho.
+        -->
+
+        <video
+          id="cake-video"
+          class="cake-video"
+          controls
+          playsinline
+          preload="metadata"
+        >
+
+          <source
+            src="./cake-cutting.mp4"
+            type="video/mp4"
+          >
+
+          Your browser does not support the video tag.
+
+        </video>
+
+        <!-- Name on Video -->
+        <div class="cake-name">
+          🎂 Mokash Ke Daddy ❤️
+        </div>
+
+      </div>
+
+      <p class="cake-message">
+
+        🎉 Happy Birthday to the most special person! 🎉
+
+        <br>
+
+        <span class="love-line">
+          You are my today, my tomorrow & my forever. ❤️
+        </span>
+
+        <br>
+
+        May our love always stay this beautiful. 🥰💕
+
+      </p>
+
+    </section>
+
+
+    
+
+    <!-- =========================
+         MUSIC
+    ========================== -->
+
+   <div class="music-controls">
+
+  <audio id="celebration-music" loop>
+    <source src="./bsong.mpeg" type="audio/mpeg">
+  </audio>
+
+  <audio id="wish-voice">
+    <source src="./wishes.mp3" type="audio/mpeg">
+  </audio>
+
+  <button id="music-toggle" class="fab-music">
+    🎵
+  </button>
+
+</div>
+
+
+
+<!-- =========================
+     FINAL MEMORY IMAGE
+========================== -->
+
+<section class="final-memory">
+
+  <div class="memory-glow"></div>
+
+  <div class="memory-content">
+
+    <div class="memory-heading">
+      <span>One More Special Moment ❤️</span>
+      <h2>For My Ankit</h2>
+      <p>
+        Kuch tasveerein sirf tasveer nahi hoti...
+        unmein poori kahani chhupi hoti hai. 🥹❤️
+      </p>
+    </div>
+
+    <div class="memory-image-wrapper">
+
+      <div class="memory-heart heart-1">❤️</div>
+      <div class="memory-heart heart-2">💕</div>
+      <div class="memory-heart heart-3">💖</div>
+      <div class="memory-heart heart-4">💗</div>
+
+      <div class="memory-image-frame">
+
+        <div class="memory-shine"></div>
+
+        <img
+          src="./start.jpeg"
+          alt="A special memory"
+          class="memory-image"
+        >
+
+      </div>
+
+    </div>
+
+    <p class="final-love">
+      “Bas aise hi saath, pyaar aur khushiyon ke saath...
+      <br>
+      Happy Birthday, Ankit ❤️”
+    </p>
+
+  </div>
+
+</section>
+
+
+  </div>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      /* =========================
+         ENTRANCE ANIMATION
+      ========================== */
+
+      const tl = gsap.timeline();
+
+      tl.from(".glass-card", {
+        y: 100,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power4.out"
+      })
+
+      .from(".main-image", {
+        scale: 1.2,
+        opacity: 0,
+        duration: 1,
+        ease: "power2.out"
+      }, "-=0.5")
+
+      .from(".celebrate-title", {
+        x: 50,
+        opacity: 0,
+        duration: 0.8
+      }, "-=0.3")
+
+      .from(".reveal-p", {
+        y: 20,
+        opacity: 0,
+        stagger: 0.3,
+        duration: 0.8
+      }, "-=0.2")
+
+      .from(".cake-section", {
+        y: 80,
+        opacity: 0,
+        duration: 1
+      }, "-=0.2");
+
+
+      /* =========================
+         BALLOONS
+      ========================== */
+
+      const balloonContainer =
+        document.getElementById("balloons-container");
+
+      const colors = [
+        "#ff4d6d",
+        "#ff758f",
+        "#ffb3c1",
+        "#ff85a1",
+        "#fbc4ab"
+      ];
+
+      for (let i = 0; i < 18; i++) {
+
+        const balloon =
+          document.createElement("div");
+
+        balloon.className = "balloon";
+
+        const size =
+          Math.random() * 30 + 30;
+
+        balloon.style.left =
+          `${Math.random() * 100}%`;
+
+        balloon.style.width =
+          `${size}px`;
+
+        balloon.style.height =
+          `${size * 1.25}px`;
+
+        balloon.style.backgroundColor =
+          colors[
+            Math.floor(Math.random() * colors.length)
+          ];
+
+        balloonContainer.appendChild(balloon);
+
+        gsap.to(balloon, {
+
+          y: -window.innerHeight - 250,
+
+          x: `+=${Math.random() * 160 - 80}`,
+
+          rotation:
+            Math.random() * 50 - 25,
+
+          duration:
+            Math.random() * 10 + 10,
+
+          delay:
+            Math.random() * 8,
+
+          repeat: -1,
+
+          ease: "none"
+
+        });
+
+      }
+
+
+      /* =========================
+         FLOATING HEARTS
+      ========================== */
+
+      function createHeart() {
+
+        const heart =
+          document.createElement("div");
+
+        heart.className = "heart";
+
+        heart.innerHTML =
+          ["❤️", "💕", "💖", "💗", "💓"][
+            Math.floor(Math.random() * 5)
+          ];
+
+        heart.style.left =
+          `${Math.random() * 100}%`;
+
+        heart.style.setProperty(
+          "--move",
+          `${Math.random() * 200 - 100}px`
+        );
+
+        heart.style.animationDuration =
+          `${Math.random() * 5 + 6}s`;
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 12000);
+      }
+
+      setInterval(createHeart, 1200);
+
+
+      /* =========================
+         CONFETTI
+      ========================== */
+
+      const duration = 15 * 1000;
+
+      const animationEnd =
+        Date.now() + duration;
+
+      const defaults = {
+        startVelocity: 30,
+        spread: 360,
+        ticks: 60,
+        zIndex: 10
+      };
+
+      function randomInRange(min, max) {
+        return Math.random() *
+          (max - min) + min;
+      }
+
+      const interval =
+        setInterval(() => {
+
+          const timeLeft =
+            animationEnd - Date.now();
+
+          if (timeLeft <= 0) {
+
+            clearInterval(interval);
+
+            return;
+
+          }
+
+          const particleCount =
+            50 * (timeLeft / duration);
+
+          confetti(
+            Object.assign(
+              {},
+              defaults,
+              {
+                particleCount,
+                origin: {
+                  x: randomInRange(0.1, 0.3),
+                  y: Math.random() - 0.2
+                }
+              }
+            )
+          );
+
+          confetti(
+            Object.assign(
+              {},
+              defaults,
+              {
+                particleCount,
+                origin: {
+                  x: randomInRange(0.7, 0.9),
+                  y: Math.random() - 0.2
+                }
+              }
+            )
+          );
+
+        }, 250);
+
+
+      /* =========================
+         SPECIAL WISH BUTTON
+      ========================== */
+
+      const addWishBtn =
+        document.getElementById("add-wish");
+
+      addWishBtn.addEventListener(
+        "click",
+        () => {
+
+          const count = 250;
+
+          const defaults = {
+            origin: {
+              y: 0.7
+            },
+
+            zIndex: 1000
+          };
+
+          function fire(
+            particleRatio,
+            opts
+          ) {
+
+            confetti(
+              Object.assign(
+                {},
+                defaults,
+                opts,
+                {
+                  particleCount:
+                    Math.floor(
+                      count *
+                      particleRatio
+                    )
+                }
+              )
+            );
+
+          }
+
+          fire(0.25, {
+            spread: 26,
+            startVelocity: 55
+          });
+
+          fire(0.2, {
+            spread: 60
+          });
+
+          fire(0.35, {
+            spread: 100,
+            decay: 0.91,
+            scalar: 0.8
+          });
+
+          fire(0.1, {
+            spread: 120,
+            startVelocity: 25,
+            decay: 0.92,
+            scalar: 1.2
+          });
+
+          fire(0.1, {
+            spread: 120,
+            startVelocity: 45
+          });
+
+
+          /* Romantic message */
+
+          const originalText =
+            addWishBtn.innerHTML;
+
+          addWishBtn.innerHTML =
+            "💖 Wish Sent to the Universe!";
+
+          addWishBtn.style.pointerEvents =
+            "none";
+
+          setTimeout(() => {
+
+            addWishBtn.innerHTML =
+              originalText;
+
+            addWishBtn.style.pointerEvents =
+              "auto";
+
+          }, 3000);
+
+        }
+      );
+
+
+      /* =========================
+         MUSIC BUTTON
+      ========================== */
+
+      const musicBtn =
+        document.getElementById(
+          "music-toggle"
+        );
+
+      const audio =
+        document.getElementById(
+          "celebration-music"
+        );
+
+      let isPlaying = false;
+
+      musicBtn.addEventListener(
+        "click",
+        async () => {
+
+          try {
+
+            if (!isPlaying) {
+
+              await audio.play();
+
+              musicBtn.classList.add(
+                "playing"
+              );
+
+              musicBtn.innerHTML =
+                "⏸️";
+
+              isPlaying = true;
+
+            } else {
+
+              audio.pause();
+
+              musicBtn.classList.remove(
+                "playing"
+              );
+
+              musicBtn.innerHTML =
+                "🎵";
+
+              isPlaying = false;
+
+            }
+
+          } catch (error) {
+
+            alert(
+              "Music play nahi ho pa rahi. Please bsong.mpeg file check karein."
+            );
+
+          }
+
+        }
+      );
+
+
+      /* =========================
+         CAKE VIDEO EVENTS
+      ========================== */
+
+      const cakeVideo =
+        document.getElementById(
+          "cake-video"
+        );
+
+        const wishVoice =
+  document.getElementById("wish-voice");
+
+cakeVideo.addEventListener("play", () => {
+  wishVoice.currentTime = 0;
+  wishVoice.play().catch(() => {});
+});
+
+
+      cakeVideo.addEventListener(
+        "play",
+        () => {
+
+          /* Cake video start hone par hearts */
+          for (let i = 0; i < 15; i++) {
+
+            setTimeout(
+              createHeart,
+              i * 150
+            );
+
+          }
+
+        }
+      );
+
+
+      cakeVideo.addEventListener(
+        "ended",
+        () => {
+
+          /* Video complete hone par celebration */
+
+          confetti({
+            particleCount: 300,
+            spread: 150,
+            origin: {
+              y: 0.6
+            },
+            zIndex: 1000
+          });
+
+          for (let i = 0; i < 25; i++) {
+
+            setTimeout(
+              createHeart,
+              i * 100
+            );
+
+          }
+
+        }
+      );
+
+    });
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,666 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Comic+Neue:wght@700&family=Quicksand:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #ffe6e6, #e6e6ff, #ffebf5);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    font-family: 'Quicksand', sans-serif;
+    overflow-x: hidden;
+    padding: 2rem;
+}
+
+.custom-cursor {
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.1s;
+}
+
+.custom-cursor svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 5px rgba(255, 182, 193, 0.5));
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-family: 'Bubblegum Sans', cursive;
+    font-size: 3rem;
+    color: #ff69b4;
+    text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
+    margin-bottom: 2rem;
+    animation: bounce 1s ease infinite;
+}
+
+.reason-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.reason-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.2);
+}
+
+.reason-text {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.gif-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1;
+}
+
+.reason-card:hover .gif-overlay {
+    opacity: 1;
+}
+
+.shuffle-button {
+    background: linear-gradient(45deg, #ff69b4, #ff99cc);
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    color: white;
+    margin: 2rem 0;
+    cursor: pointer;
+    transition: transform 0.3s;
+    font-family: 'Comic Neue', cursive;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+}
+
+.shuffle-button:hover {
+    transform: scale(1.1);
+}
+
+.floating {
+    position: fixed;
+    pointer-events: none;
+    animation: float 3s ease-in-out infinite;
+}
+
+.ending-section {
+    margin-top: 4rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.ending-text {
+    font-family: 'Bubblegum Sans', cursive;
+    font-size: 2rem;
+    color: #ff69b4;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.teddy-hug {
+    width: 200px;
+    margin: 0 auto;
+    transform: scale(0);
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    .reason-card { margin: 1rem; }
+    .reason-text { font-size: 1rem; }
+}
+.shuffle-button {
+    background: linear-gradient(45deg, #ff69b4, #ff99cc);
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    color: white;
+    margin: 2rem 0;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Comic Neue', cursive;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+}
+
+.shuffle-button.story-mode {
+    background: linear-gradient(45deg, #9b6dff, #ff6dc7);
+    transform: scale(1.1);
+}
+
+.shuffle-button:hover {
+    transform: scale(1.1);
+}
+
+.shuffle-button.story-mode:hover {
+    transform: scale(1.2);
+}
+
+.reason-counter {
+    font-size: 0.9rem;
+    color: #ff69b4;
+    margin-top: 1rem;
+    opacity: 0.7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#reasons-container {
+    color: #111 !important;
+}
+
+#reasons-container p,
+#reasons-container h2,
+#reasons-container h3,
+#reasons-container div,
+#reasons-container span {
+    color: #111 !important;
+}
+
+#reasons-container strong,
+#reasons-container b {
+    color: #000 !important;
+}
+
+.reason-text {
+    color: #111 !important;
+    text-shadow: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+   BASE
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    font-family: "Poppins", "Segoe UI", sans-serif;
+
+    color: #fff;
+
+    background: #160814;
+
+    position: relative;
+}
+
+
+/* =========================================
+   MEMORY IMAGE BACKGROUND
+========================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(35, 5, 30, 0.48),
+            rgba(110, 20, 75, 0.25),
+            rgba(20, 5, 35, 0.52)
+        ),
+        url("./memory1.png") center center / contain no-repeat;
+
+    background-color: #160814;
+
+    filter: blur(4px);
+
+    transform: scale(1.02);
+
+    opacity: 0.78;
+
+    z-index: -10;
+}
+
+
+/* =========================================
+   DREAMY DARK OVERLAY
+========================================= */
+
+body::after {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(255, 105, 180, 0.12),
+            transparent 38%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(177, 75, 255, 0.16),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(255, 70, 150, 0.14),
+            transparent 30%
+        ),
+        linear-gradient(
+            rgba(10, 3, 15, 0.15),
+            rgba(10, 3, 15, 0.40)
+        );
+
+    pointer-events: none;
+
+    z-index: -9;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.container {
+    width: min(92%, 850px);
+
+    margin: 0 auto;
+
+    padding: 70px 20px 60px;
+
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.container h1 {
+    margin-bottom: 40px;
+
+    font-size: clamp(2rem, 6vw, 4rem);
+
+    font-weight: 700;
+
+    color: #fff;
+
+    letter-spacing: -1px;
+
+    text-shadow:
+        0 0 8px rgba(255, 255, 255, 0.45),
+        0 0 20px rgba(255, 105, 180, 0.8),
+        0 0 45px rgba(255, 50, 160, 0.45);
+
+    animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+    from {
+        text-shadow:
+            0 0 8px rgba(255, 255, 255, 0.4),
+            0 0 20px rgba(255, 105, 180, 0.65);
+    }
+
+    to {
+        text-shadow:
+            0 0 12px rgba(255, 255, 255, 0.7),
+            0 0 30px rgba(255, 105, 180, 0.9),
+            0 0 55px rgba(255, 50, 160, 0.5);
+    }
+}
+
+
+/* =========================================
+   REASONS CARD
+========================================= */
+
+#reasons-container {
+    position: relative;
+
+    width: min(100%, 650px);
+
+    margin: 0 auto 30px;
+
+    padding: 35px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.16),
+            rgba(255, 120, 190, 0.07)
+        );
+
+    border: 1px solid rgba(255, 200, 230, 0.35);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.35),
+        0 0 35px rgba(255, 80, 170, 0.15),
+        inset 0 1px 1px rgba(255, 255, 255, 0.3);
+
+    overflow: hidden;
+}
+
+
+/* Card pink glow */
+
+#reasons-container::before {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    top: -150px;
+    right: -100px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 80, 180, 0.22);
+
+    filter: blur(50px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.shuffle-button {
+    border: 1px solid rgba(255, 220, 240, 0.5);
+
+    border-radius: 50px;
+
+    padding: 14px 32px;
+
+    color: #fff;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4fa3,
+            #c34cff
+        );
+
+    box-shadow:
+        0 10px 30px rgba(255, 50, 160, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.35);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.shuffle-button:hover {
+    transform: translateY(-4px) scale(1.04);
+
+    box-shadow:
+        0 15px 40px rgba(255, 50, 160, 0.5),
+        0 0 25px rgba(255, 100, 200, 0.35);
+}
+
+.shuffle-button:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================================
+   COUNTER
+========================================= */
+
+.reason-counter {
+    margin-top: 15px;
+
+    color: rgba(255, 220, 240, 0.85);
+
+    font-size: 14px;
+
+    text-shadow:
+        0 0 8px rgba(255, 100, 190, 0.5);
+}
+
+
+/* =========================================
+   ENDING SECTION
+========================================= */
+
+.ending-section {
+    margin-top: 70px;
+
+    padding: 35px 20px;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    border: 1px solid rgba(255, 200, 230, 0.2);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(255, 80, 180, 0.1);
+}
+
+
+/* =========================================
+   TEDDY IMAGE
+========================================= */
+
+.teddy-hug img {
+    width: 180px;
+    max-width: 70%;
+
+    border-radius: 25px;
+
+    display: block;
+
+    margin: 0 auto 25px;
+
+    border: 2px solid rgba(255, 200, 230, 0.35);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(255, 100, 190, 0.3);
+
+    animation: teddyFloat 4s ease-in-out infinite;
+}
+
+@keyframes teddyFloat {
+    0%,
+    100% {
+        transform: translateY(0) rotate(-1deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(1deg);
+    }
+}
+
+
+/* =========================================
+   ENDING TEXT
+========================================= */
+
+.ending-text {
+    font-size: clamp(1.6rem, 5vw, 2.8rem);
+
+    font-weight: 700;
+
+    color: #fff;
+
+    text-shadow:
+        0 0 10px rgba(255, 120, 200, 0.7),
+        0 0 25px rgba(255, 70, 170, 0.5);
+}
+
+
+/* =========================================
+   CUSTOM CURSOR
+========================================= */
+
+.custom-cursor {
+    position: fixed;
+
+    width: 28px;
+    height: 28px;
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    transform: translate(-50%, -50%);
+
+    filter:
+        drop-shadow(0 0 8px rgba(255, 105, 180, 0.8));
+
+    transition: transform 0.08s linear;
+}
+
+.custom-cursor svg {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding-top: 45px;
+        padding-bottom: 40px;
+    }
+
+    .container h1 {
+        margin-bottom: 25px;
+    }
+
+    #reasons-container {
+        padding: 25px 18px;
+
+        border-radius: 24px;
+    }
+
+    .shuffle-button {
+        padding: 12px 26px;
+        font-size: 14px;
+    }
+
+    .ending-section {
+        margin-top: 45px;
+        padding: 28px 15px;
+    }
+
+    .teddy-hug img {
+        width: 145px;
+    }
+}
